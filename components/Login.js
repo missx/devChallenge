@@ -8,6 +8,7 @@ import {
     TouchableHighlight,
     Modal
 } from 'react-native';
+import Colors from '../utils/colors.js'
 
 export default class Login extends Component {
     
@@ -107,7 +108,7 @@ const styles = StyleSheet.create({
     titleView: {
         padding: 10,
         borderBottomWidth: 1,
-        borderBottomColor: 'black',
+        borderBottomColor: Colors.black,
         backgroundColor: '#f5f5f5'
     },
     subContainer: {
@@ -126,13 +127,13 @@ const styles = StyleSheet.create({
         fontSize: 17
     },
     logingBtn : {
-        backgroundColor: '#11C1F3', 
+        backgroundColor: Colors.skyBlue, 
         width: 300,
         height: 50, 
         marginTop: 20
     },
     buttons : {
-        color: 'white', 
+        color: Colors.white, 
         fontSize: 25, 
         textAlign: 'center'
     }, 

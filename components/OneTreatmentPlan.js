@@ -39,6 +39,10 @@ export default class OneTreatmentPlan extends Component {
 		}
 	}
 
+	_saveTreatmentPlan() {
+
+	}
+
 	render() {
 
 		return (
@@ -74,6 +78,11 @@ export default class OneTreatmentPlan extends Component {
 			            </View>
 			        </TouchableWithoutFeedback>
 				</View>
+				<TouchableHighlight onPress={this._saveTreatmentPlan.bind(this)} style={styles.logingBtn}>
+					<View style={styles.buttonsView}>
+                        <Text style={styles.buttons}>Save</Text>
+                    </View>
+				</TouchableHighlight>
 			</View>
 		)
 	}
@@ -121,6 +130,23 @@ const styles = StyleSheet.create({
 
 	datepickerText: {
 		color: Colors.darkGrey
-	}
+	},
+
+	buttons : {
+        color: 'white', 
+        fontSize: 25, 
+        textAlign: 'center'
+    }, 
+    buttonsView : {
+        paddingTop: 5,
+        paddingBottom: 5
+    },
+
+    logingBtn : {
+        backgroundColor: Colors.skyBlue, 
+        width: 330,
+        height: 50, 
+        marginTop: 20
+    }
 
 });
