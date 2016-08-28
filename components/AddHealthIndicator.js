@@ -17,7 +17,8 @@ export default class AddHealthIndicator extends Component {
 		this.state = {
 			withinRange: true,
 			bloodPressure: '100',
-			bloodPressureValues: [80, 81, 82, 83, 84, 85],
+			bodyTemperature: '36',
+			bodyWeight: '60'
         };
 	}
 
@@ -38,13 +39,29 @@ export default class AddHealthIndicator extends Component {
 						<Text style={styles.text}>Is it within your range?</Text>
 						<Switch
 				          onValueChange={(value) => this.setState({withinRange: !this.state.withinRange})}
-				          style={{marginBottom: 10}}
+				          style={styles.switch}
 				          value={this.state.withinRange} />
 			        </View>
 				</View>
 				<View style={[styles.border, styles.childViews]}>
-					<Text style={styles.text}>Body Temperature</Text>
-					<Text style={styles.text}>Body Weight</Text>
+					<View style={styles.inline}>
+						<Text style={styles.text}>Body Temperature</Text>
+						<Picker 
+						style={styles.picker}
+						selectedValue={this.state.bodyTemperature}>
+				            <Picker.Item label="80" value="80" />
+				            <Picker.Item label="81" value="81" />
+            			</Picker>
+					</View>
+					<View style={styles.inline}>
+						<Text style={styles.text}>Body Weight</Text>
+						<Picker 
+						style={styles.picker}
+						selectedValue={this.state.bodyWeight}>
+				            <Picker.Item label="80" value="80" />
+				            <Picker.Item label="81" value="81" />
+            			</Picker>
+					</View>
 				</View>
 				<TouchableHighlight style={styles.logingBtn}>
 					<View style={styles.buttonsView}>
@@ -98,7 +115,11 @@ const styles = StyleSheet.create({
     },
 
     picker: {
-    	width: 80
+    	width: 60
+    },
+
+    switch: {
+    	marginTop: 10
     }
 
 });

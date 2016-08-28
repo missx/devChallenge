@@ -6,7 +6,7 @@ import {
 } from 'react-native'; 
 //import NavigationBar from './NavigationBar';
 import Login from './Login';
-import TreatmentPlans from './AddHealthIndicator';
+import TreatmentPlans from './HealthIndicatorHistory';
 
 export default class Root extends Component {
 
