@@ -16,7 +16,7 @@ export default class TreatmentPlans extends Component {
 
 		const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 		this.state = {
-			dataSource: ds.cloneWithRows(['Treatment 1', 'Treatment 2', 'Treatment 3', 'Treatment 4', 'Treatment 5']),
+			dataSource: ds.cloneWithRows(['Treatment 1', 'Treatment b', 'Treatment 3', 'Treatment 4', 'Treatment 5']),
 		};
     }
 

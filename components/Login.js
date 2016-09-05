@@ -51,7 +51,7 @@ export default class Login extends Component {
                         secureTextEntry={true}
                         value={this.state.password}
                     />
-                    <TouchableHighlight style={styles.logingBtn} onPress={this._login.bind(this)}>
+                    <TouchableHighlight style={styles.wholeBtn} onPress={this._login.bind(this)}>
                         <View style={styles.buttonsView}>
                             <Text style={styles.buttons}>Login</Text>
                         </View>
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
         height: 50, 
         fontSize: 17
     },
-    logingBtn : {
+    wholeBtn : {
         backgroundColor: Colors.skyBlue, 
         width: 300,
         height: 50, 

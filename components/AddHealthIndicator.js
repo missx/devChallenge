@@ -8,6 +8,7 @@ import {
 	Switch,
 	Picker
 } from 'react-native';
+import { Actions} from 'react-native-router-flux';
 import Colors from '../utils/colors.js';
 
 export default class AddHealthIndicator extends Component {
@@ -63,20 +64,26 @@ export default class AddHealthIndicator extends Component {
             			</Picker>
 					</View>
 				</View>
-				<TouchableHighlight style={styles.logingBtn}>
+				<TouchableHighlight style={styles.wholeBtn}
+					onPress={this._save.bind(this)}>
 					<View style={styles.buttonsView}>
-                        <Text style={styles.buttons}>Sign Up</Text>
+                        <Text style={styles.buttons}>Save</Text>
                     </View>
 				</TouchableHighlight>
 			</View>
 		);
+	}
+
+	_save() {
+		Actions.healthIndicatorHistory();
 	}
 }
 
 const styles = StyleSheet.create({
 
 	mainContainer: {
-		margin: 20
+		margin: 20,
+		marginTop: 100
 	},
 	border: {
 		borderColor: Colors.grey,
@@ -94,7 +101,7 @@ const styles = StyleSheet.create({
 		paddingTop: 11
 	},
 
-	logingBtn : {
+	wholeBtn : {
         backgroundColor: Colors.skyBlue, 
         height: 50, 
         marginTop: 20,
