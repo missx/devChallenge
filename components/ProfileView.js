@@ -23,11 +23,26 @@ export default class ProfileView extends Component {
 						<Text style={styles.nameText}>[Name of person]</Text>
 					</View>
 				</View>
-				<View>
-
+				<View style={styles.locationView}>
+					<Text style={styles.locationText}>Your current location</Text>
 				</View>
-				<View>
-
+				<View style={[styles.border, styles.formView]}>
+					<View style={styles.oneInfo}>
+						<Text style={styles.formLabel}>Email</Text>
+						<Text style={styles.formInfo}>johndoe@john.com</Text>
+					</View>
+					<View style={styles.oneInfo}>
+						<Text style={styles.formLabel}>Address</Text>
+						<Text style={styles.formInfo}>123 John St</Text>
+					</View>
+					<View style={styles.oneInfo}>
+						<Text style={styles.formLabel}>Phone #</Text>
+						<Text style={styles.formInfo}>444 - 555 - 000</Text>
+					</View>
+					<View style={styles.oneInfo}>
+						<Text style={styles.formLabel}>Diseases</Text>
+						<Text style={styles.formInfo}>Panchreatitis, Asthma, Diabetes</Text>
+					</View>
 				</View>
 				<TouchableHighlight style={styles.wholeBtn}
 					onPress={this._edit.bind(this)}>
@@ -81,5 +96,38 @@ const styles = StyleSheet.create({
     nameText: {
     	color: Colors.green,
     	fontSize: 20
+    },
+
+    locationView: {
+    	padding: 10
+    },
+
+    locationText: {
+    	fontSize: 20, 
+    	fontWeight: 'bold'
+    },
+
+    formView: {
+    	
+    },
+
+    oneInfo: {
+    	flexDirection: 'row',
+    	padding: 10,
+    	borderColor: Colors.grey,
+		borderStyle: 'solid',
+		borderWidth: 1,
+		borderBottomWidth: 0.5
+    },
+
+    formLabel: {
+    	fontWeight: 'bold',
+    	fontSize: 18, 
+    	flex: 1
+    },
+
+    formInfo: {
+    	fontSize: 18,
+    	flex: 2
     }
 });
