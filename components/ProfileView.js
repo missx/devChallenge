@@ -26,7 +26,7 @@ export default class ProfileView extends Component {
 				<View style={styles.locationView}>
 					<Text style={styles.locationText}>Your current location</Text>
 				</View>
-				<View style={[styles.border, styles.formView]}>
+				<View style={[styles.border]}>
 					<View style={styles.oneInfo}>
 						<Text style={styles.formLabel}>Email</Text>
 						<Text style={styles.formInfo}>johndoe@john.com</Text>
@@ -47,7 +47,7 @@ export default class ProfileView extends Component {
 				<TouchableHighlight style={styles.wholeBtn}
 					onPress={this._edit.bind(this)}>
 					<View style={styles.buttonsView}>
-                        <Text style={styles.buttons}>Save</Text>
+                        <Text style={styles.buttons}>Edit</Text>
                     </View>
 				</TouchableHighlight>
 			</View>
@@ -105,10 +105,6 @@ const styles = StyleSheet.create({
     locationText: {
     	fontSize: 20, 
     	fontWeight: 'bold'
-    },
-
-    formView: {
-    	
     },
 
     oneInfo: {
