@@ -5,7 +5,8 @@ import {
 	StyleSheet,
 	TouchableHighlight,
 	TextInput,
-	Image
+	Image, 
+	Platform
 } from 'react-native';
 import Colors from '../utils/colors.js';
 import { Actions } from 'react-native-router-flux';
