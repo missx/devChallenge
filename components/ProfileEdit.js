@@ -9,10 +9,11 @@ import {
 } from 'react-native';
 import Colors from '../utils/colors.js';
 import { Actions } from 'react-native-router-flux';
+import ImagePicker from 'react-native-image-picker';
 
 export default class ProfileEdit extends Component {
 
-
+	
 	render() {
 		return (
 			<View style={styles.mainContainer}>
@@ -25,7 +26,7 @@ export default class ProfileEdit extends Component {
 					</View>
 					<View style={styles.photoLinkView}>
 						<TouchableHighlight
-							>
+							onPress={this._openPhotoPicker.bind(this)}>
 							<View >
 		                        <Text style={styles.photoLink}>Add Photo</Text>
 		                    </View>
@@ -72,6 +73,46 @@ export default class ProfileEdit extends Component {
 
 	_saveProfile() {
 		Actions.profileView();
+	}
+
+	_openPhotoPicker() {
+
+		const pickerOptions = {
+			title: 'Select Profile Picture',
+			storageOptions: {
+				skipBackup: true,
+				path: 'images'
+			}
+		};
+
+		ImagePicker.showImagePicker(pickerOptions, (response) => {
+			console.log('Response = ', response);
+
+			if (response.didCancel) {
+				console.log('User cancelled image picker');
+			}
+			else if (response.error) {
+				console.log('ImagePicker Error: ', response.error);
+			}
+			else if (response.customButton) {
+				console.log('User tapped custom button: ', response.customButton);
+			}
+			else {
+				// You can display the image using either data...
+				const source = {uri: 'data:image/jpeg;base64,' + response.data, isStatic: true};
+
+				// or a reference to the platform specific asset location
+				if (Platform.OS === 'ios') {
+					const source = {uri: response.uri.replace('file://', ''), isStatic: true};
+				} else {
+					const source = {uri: response.uri, isStatic: true};
+				}
+
+				this.setState({
+					avatarSource: source
+				});
+			}
+		});
 	}
 
 }

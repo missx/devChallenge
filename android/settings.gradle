@@ -1,3 +1,7 @@
 rootProject.name = 'devChallenge'
 
 include ':app'
+include ':react-native-maps:lib'
+project(':react-native-maps').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-maps/android/lib')
+include ':react-native-image-picker'
+project(':react-native-image-picker').projectDir = new File(settingsDir, '../node_modules/react-native-image-picker/android')

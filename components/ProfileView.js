@@ -7,6 +7,7 @@ import {
 	TextInput,
 } from 'react-native';
 import Colors from '../utils/colors.js';
+import CurrentLocationMap from './CurrentLocationMap'; 
 import { Actions } from 'react-native-router-flux';
 
 export default class ProfileView extends Component {
@@ -25,6 +26,7 @@ export default class ProfileView extends Component {
 				</View>
 				<View style={styles.locationView}>
 					<Text style={styles.locationText}>Your current location</Text>
+					<CurrentLocationMap />
 				</View>
 				<View style={[styles.border]}>
 					<View style={styles.oneInfo}>
@@ -99,7 +101,7 @@ const styles = StyleSheet.create({
     },
 
     locationView: {
-    	padding: 10
+    	padding: 5
     },
 
     locationText: {

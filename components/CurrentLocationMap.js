@@ -12,17 +12,26 @@ export default class CurrentLocationMap extends Component {
 
 	render() {
 		return (
-			<View>
-				
+			<View style={styles.mapView}>
+				<MapView 
+					style={styles.map}
+					showsUserLocation={true}
+					followsUserLocation={true}
+				/>
 			</View>
 		);
 	}
+
 }
 
 const styles = StyleSheet.create({
-	map: {
-		height: 150,
+	mapView: {
+		height: 75,
 		alignSelf: 'stretch',
-		margin: 40
-	}
+		margin: 40,
+	},
+	map: {
+	    height: 100,
+	    alignSelf: 'stretch',
+	},
 });

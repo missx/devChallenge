@@ -47,14 +47,14 @@ export default class Root extends Component {
 					 <Scene key="profileView" component={ProfileView} title="Your Profile" 
 					 titleStyle= {{color: 'white'}} 
 					 navigationBarStyle={{ backgroundColor: Colors.green, borderBottomColor: 'transparent', borderBottomWidth: 65 }}
-					 backButtonTextStyle={{ color: 'white'}}
+					 backButtonTextStyle={{ color: 'white'}} initial={true}
 					 />
 
 					<Scene key="profileEdit" component={ProfileEdit} title="Edit Profile" 
 					 titleStyle= {{color: 'white'}} 
 					 navigationBarStyle={{ backgroundColor: Colors.green, borderBottomColor: 'transparent', borderBottomWidth: 65 }}
 					 backButtonTextStyle={{ color: 'white'}} 
-					 initial={true}/>
+					 />
 
 				</Scene>
 			</Router>
