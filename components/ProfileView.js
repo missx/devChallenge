@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
 
 	mainContainer: {
 		margin: 20,
-		marginTop: 100
+		marginTop: 90
 	},
 
 	border: {
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
 
     nameView: {
     	padding: 10, 
-    	height: 125
+    	height: 100
     },
 
     nameText: {
@@ -101,7 +101,8 @@ const styles = StyleSheet.create({
     },
 
     locationView: {
-    	padding: 5
+    	padding: 5, 
+    	paddingBottom: 0
     },
 
     locationText: {

@@ -26,13 +26,14 @@ export default class Root extends Component {
 					<Scene key="login" component={Login} title="Login" 
 					 titleStyle= {{color: 'white'}} 
 					 navigationBarStyle={{ backgroundColor: Colors.green, borderBottomColor: 'transparent', borderBottomWidth: 65 }}
-					 initial={true}/>
+					 initial={true} />
 
 					<Scene key="treatmentPlans" component={TreatmentPlans} title="Treatment Plans"
 					 titleStyle= {{color: 'white'}} 
 					 navigationBarStyle={{ backgroundColor: Colors.green, borderBottomColor: 'transparent', borderBottomWidth: 65 }}
 					 rightTitle="Indicators" onRight={ () => { Actions.healthIndicators() }} rightButtonTextStyle={{color: 'white'}}
-					 leftTitle="Profile" onLeft={ () => { Actions.profileView() }} leftButtonTextStyle={{color: 'white'}}
+					 backTitle="Profile" onBack={ () => { Actions.profileView()} } backButtonTextStyle={{color: 'white'}}
+					 hideBackImage				 
 					 />
 
 					 <Scene key="oneTreatmantPlan" component={OneTreatmentPlan} title="Treatment Plan"
