@@ -8,7 +8,9 @@ import {
     TouchableHighlight,
     Modal
 } from 'react-native';
-import Colors from '../utils/colors.js'
+import Colors from '../utils/colors.js';
+import { Actions } from 'react-native-router-flux';
+
 
 export default class Login extends Component {
     
@@ -56,9 +58,13 @@ export default class Login extends Component {
                             <Text style={styles.buttons}>Login</Text>
                         </View>
                     </TouchableHighlight>
-                    <Text style={styles.accountCreate}>
-                        Or create an account
-                    </Text>
+                    <TouchableHighlight onPress={ () => { Actions.createAccount(); }}>
+                        <View>
+                            <Text style={styles.accountCreate}>
+                                Or create an account
+                            </Text>
+                        </View>
+                    </TouchableHighlight>                    
                     <Modal 
                         animationType={"slide"}
                         transparent={true}
@@ -87,7 +93,8 @@ export default class Login extends Component {
         console.log(this.state);
         var user = this.state.username;
         var pwd = this.state.password;
-        if (user.length > 0 && pwd.length > 0) {
+        Actions.treatmentPlans();
+        /*if (user.length > 0 && pwd.length > 0) {
             //getUser(user, pwd);
             alert('dododo');
         } else {
@@ -95,7 +102,7 @@ export default class Login extends Component {
                 errorText: 'Please insert \nusername and password',
                 modalVisible: true
             });
-        }
+        }*/
         
     }
 }

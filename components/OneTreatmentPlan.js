@@ -78,7 +78,7 @@ export default class OneTreatmentPlan extends Component {
 			            </View>
 			        </TouchableWithoutFeedback>
 				</View>
-				<TouchableHighlight onPress={this._saveTreatmentPlan.bind(this)} style={styles.logingBtn}>
+				<TouchableHighlight onPress={this._saveTreatmentPlan.bind(this)} style={styles.saveBtn}>
 					<View style={styles.buttonsView}>
                         <Text style={styles.buttons}>Save</Text>
                     </View>
@@ -142,9 +142,9 @@ const styles = StyleSheet.create({
         paddingBottom: 5
     },
 
-    logingBtn : {
-        backgroundColor: Colors.skyBlue, 
-        width: 330,
+    saveBtn : {
+        backgroundColor: Colors.skyBlue,
+        alignSelf: 'stretch',
         height: 50, 
         marginTop: 20
     }

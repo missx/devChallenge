@@ -8,6 +8,7 @@ import {
 
 } from 'react-native';
 import Colors from '../utils/colors.js';
+import { Actions } from 'react-native-router-flux';
 
 export default class TreatmentPlans extends Component {
 
@@ -29,7 +30,9 @@ export default class TreatmentPlans extends Component {
 				<ListView
 					style={styles.listContainer}
 					dataSource={this.state.dataSource}
-					renderRow={(data) => <View style={styles.oneTreatment}><TouchableHighlight ><Text style={styles.link}>{data}</Text></TouchableHighlight></View>}
+					renderRow={(data) => <View style={styles.oneTreatment}>
+											<TouchableHighlight onPress={() => { Actions.oneTreatmantPlan(); }}>
+                                    			<Text style={styles.link}>{data}</Text></TouchableHighlight></View>}
 			    />
 			</View>
 		)

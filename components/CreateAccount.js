@@ -39,7 +39,8 @@ export default class CreateAccount extends Component {
 const styles = StyleSheet.create({
 
 	mainContainer: {
-		margin: 20
+		margin: 20,
+		paddingTop: 50
 	},
 	logingBtn : {
         backgroundColor: Colors.skyBlue, 
